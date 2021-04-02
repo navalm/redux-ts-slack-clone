@@ -5,7 +5,7 @@ import HeaderSearch from './HeaderSearch';
 import { StyledHeader } from './style';
 
 const Header = (props: any) => {
-  const {} = props;
+  // const {} = props;
   return (
     <StyledHeader>
       <HeaderLeft />

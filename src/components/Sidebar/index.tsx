@@ -1,6 +1,7 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
-import { db } from '../../firebase';
+import { auth, db } from '../../firebase';
 import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
 import DownIcon from '@material-ui/icons/ExpandMoreSharp';
@@ -32,7 +33,10 @@ const sidebarOpts = [
 
 const Sidebar = (props: any) => {
   // const {} = props;
-  const [channels, loading, error] = useCollection(db.collection('rooms'));
+  // const [channels, loading, error] = useCollection(db.collection('rooms'));
+  const [channels] = useCollection(db.collection('rooms'));
+  const [user] = useAuthState(auth);
+
   return (
     <StyledSidebar>
       <SidebarHeader>
@@ -44,7 +48,7 @@ const Sidebar = (props: any) => {
         >
           <Grid item>
             <h1>Slack HQ&nbsp;<DownIcon /></h1>
-            <h3><FiberIcon className={'online'} />&nbsp;Naval Monga</h3>
+            <h3><FiberIcon className={'online'} />&nbsp;{user && user.displayName}</h3>
           </Grid>
           <Grid item>
             <Fab size="small">

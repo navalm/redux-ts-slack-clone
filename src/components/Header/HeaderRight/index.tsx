@@ -3,7 +3,7 @@ import InfoIcon from '@material-ui/icons/InfoOutlined';
 import { StyledHeaderRight } from './style';
 
 const HeaderRight = (props: any) => {
-  const {} = props;
+  // const {} = props;
   return (
     <StyledHeaderRight>
       <InfoIcon />

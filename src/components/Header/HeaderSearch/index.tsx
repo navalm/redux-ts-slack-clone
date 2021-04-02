@@ -5,7 +5,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { StyledHeaderSearch } from './style';
 
 const HeaderSearch = (props: any) => {
-  const {} = props;
+  // const {} = props;
   return (
     <StyledHeaderSearch>
       <TextField 

@@ -3,10 +3,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CounterState {
   roomId: number | null;
+  roomName: string;
 }
 
 const initialState: CounterState = {
   roomId: null,
+  roomName: '',
 };
 
 export const appSlice = createSlice({
@@ -16,6 +18,7 @@ export const appSlice = createSlice({
     // Use the PayloadAction type to declare the contents of `action.payload`
     enterRoom: (state, action: PayloadAction<any>) => {
       state.roomId = action.payload.roomId;
+      state.roomName = action.payload.roomName;
     }
   },
 });
@@ -33,5 +36,6 @@ export const { enterRoom } = appSlice.actions;
 // };
 
 export const selectRoomId = (state: any) => state.app.roomId;
+export const selectRoomName = (state: any) => state.app.roomName;
 
 export default appSlice.reducer;

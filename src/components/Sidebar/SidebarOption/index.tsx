@@ -24,6 +24,7 @@ const SidebarOption = (props: any) => {
       dispatch(
         enterRoom({
           roomId: id,
+          roomName: title
         })
       );
     }
