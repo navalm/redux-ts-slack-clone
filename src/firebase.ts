@@ -1,12 +1,12 @@
 import firebase from 'firebase';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBnwG7eL4IpTLaI0MDCUcY_tgGOIA_J7ZY",
-  authDomain: "reduxslackclone.firebaseapp.com",
-  projectId: "reduxslackclone",
-  storageBucket: "reduxslackclone.appspot.com",
-  messagingSenderId: "277217468253",
-  appId: "1:277217468253:web:e3544073ed574448e292b4"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
